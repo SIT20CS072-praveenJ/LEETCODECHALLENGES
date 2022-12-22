@@ -1,0 +1,54 @@
+# LEETCODECHALLENGES
+import java.util.*;
+public class Hello {
+
+    public static void main(String[] args) {
+	   Scanner sc=new Scanner(System.in);
+	   int n=sc.nextInt();
+	   String bin=Integer.toBinaryString(n);
+	   int k=bin.length();
+	   int z=1,x=k-2;
+	   String r="";
+	   String q="";
+	   for(int w=0;w<k-2;w++){
+	       q=q+"*";
+	   }
+	   //int mul=((bin.charAt(0)-'0')*(bin.charAt(k-1)-'0'));
+	   //System.out.println(mul);
+	   for(int i=0;i<k;i++)
+	   {
+	       if(i==0)System.out.println(bin);
+	       else if(i==k-1){
+	           for(int j=bin.length()-1;j>=0;j--){
+	               System.out.print(bin.charAt(j));
+	           }
+	       }
+	       else{
+	        r=r+(bin.charAt(z)-'0');
+	        //System.out.println(r);
+	        r=r+q;
+	        r=r+(bin.charAt(x)-'0');
+	        System.out.println(r);
+	        z++;
+	        x--;
+	        r="";
+	       }
+	   }
+
+	}
+}
+
+/* example 1:
+   input:8
+   output:1000
+          0**0
+          0**0
+          0001
+          
+  example 2:
+  input:7
+  output:111
+         1*1
+         111
+*/         
+         
