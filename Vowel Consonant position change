@@ -1,0 +1,30 @@
+
+#include<stdio.h>
+#include<stdlib.h>
+
+int main()
+{
+   char s[101];
+   scanf("%s",s);
+   int n=strlen(s),c=1;
+   int last,first;
+   char vall,valf;
+   for(int i=0;i<n;i++){
+       if(s[i]=='a'||s[i]=='e'||s[i]=='i'||s[i]=='o'||s[i]=='u'){
+           vall=s[i];
+           last = i;
+       }else{
+           if(c==1){
+           first = i;
+           valf=s[i];
+           }
+           c++;
+       }
+   }for(int i=0;i<n;i++){
+       if(i==first)printf("%c",vall);
+       else if(i==last)printf("%c",valf);
+       else{
+           printf("%c",s[i]);
+       }
+   }
+}
